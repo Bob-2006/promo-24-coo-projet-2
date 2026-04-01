@@ -1,0 +1,5 @@
+# Réponses aux questions DuckCorp
+
+**Question (Ex1) :** Une méthode default dans une interface ne peut **pas** accéder aux champs privés de la classe qui l'implémente, car une interface n'a aucune connaissance de l'état interne (les champs) des classes l'implémentant. Elle ne peut utiliser que les méthodes publiques définies dans son propre contrat, comme getQualityScore() que isDefective() appelle.
+
+**Question (Ex2) :** En Java, l'héritage multiple de classes est interdit. Si Machine était une interface et Maintainable une classe abstraite, nos presses auraient dû hériter de Maintainable. Or, on choisit une classe abstraite pour mutualiser de l'état (les champs condition, capacity) et du code (maintain()), et une interface pour définir un contrat de capacité ("est maintenable") qu'importe l'objet.
