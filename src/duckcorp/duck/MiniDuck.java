@@ -12,8 +12,8 @@ package duckcorp.duck;
 public class MiniDuck extends Duck {
     public static final double BASE_PRICE = 12.0;
 
-    public StandardDuck(int qualityScore) {
-        super(DuckType.STANDARD, qualityScore);
+    public MiniDuck(int qualityScore) {
+        super(DuckType.MINI, qualityScore);
     }
 
     @Override

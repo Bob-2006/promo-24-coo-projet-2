@@ -3,7 +3,6 @@ package duckcorp.stats;
 import duckcorp.duck.Duck;
 import duckcorp.duck.DuckType;
 import duckcorp.order.Order;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -61,9 +60,11 @@ public class ProductionStats {
      * Réfléchissez à la signature du paramètre : doit-elle accepter
      * uniquement une List<Duck>, ou quelque chose de plus général ?
      */
-    public void recordProduction(List<Duck> ducks) {
-        // TODO
-        throw new UnsupportedOperationException("TODO : ProductionStats.recordProduction()");
+ public void recordProduction(List<? extends Duck> ducks) {
+        for (Duck duck : ducks) {
+            produced.merge(duck.getType(), 1, Integer::sum); 
+
+        }
     }
 
     /**
